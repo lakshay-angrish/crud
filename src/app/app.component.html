@@ -1,0 +1,37 @@
+<div class="container">
+  <form (ngSubmit)="addData()" #myForm="ngForm">
+    <mat-form-field appearance="legacy">
+      <mat-label>First Name</mat-label>
+      <input matInput name="firstName" [(ngModel)]="firstName" required>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Last Name</mat-label>
+      <input matInput name="lastName" [(ngModel)]="lastName" required>
+    </mat-form-field>
+    <br>
+
+    <mat-form-field appearance="legacy">
+      <mat-label>Email</mat-label>
+      <input matInput name="email" [(ngModel)]="email" required>
+    </mat-form-field>
+    <br>
+
+    <button type="submit" mat-raised-button color="primary" [disabled]="!myForm.form.valid">Add</button>
+  </form>
+
+</div>
+<div class="container">
+  <h2>Users:</h2>
+</div>
+<div class="container">
+  <mat-list role="list">
+    <mat-list-item role="listitem" *ngFor="let user of users">
+      {{ user.firstName }} {{user.lastName}}
+      <button mat-icon-button (click)="openEditUserDialog(user)">
+        <mat-icon>create</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+</div>

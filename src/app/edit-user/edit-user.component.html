@@ -1,0 +1,18 @@
+<div>
+  <mat-list-item role="listitem">{{email}}</mat-list-item>
+  <br>
+  <mat-form-field appearance="legacy">
+    <mat-label>First Name</mat-label>
+    <input matInput name="firstName" [(ngModel)]="firstName">
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Last Name</mat-label>
+    <input matInput name="lastName" [(ngModel)]="lastName">
+  </mat-form-field>
+  <br>
+
+  <button class="editButton" mat-raised-button color="primary" (click)="updateUser()">Update</button>
+  <button class="editButton" mat-raised-button color="warn" (click)="deleteUser()">Delete</button>
+</div>
